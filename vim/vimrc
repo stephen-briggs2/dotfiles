@@ -17,7 +17,9 @@ if !empty(glob('~/vimfiles/autoload/plug.vim'))
 	call plug#begin('~/vimfiles/plugged')
 		Plug 'junegunn/vim-easy-align' " Easy column-based alignment
 		Plug 'Townk/vim-autoclose'
+		Plug 'PProvost/vim-ps1'
 	call plug#end()
+
 
 endif
 
@@ -31,3 +33,14 @@ set undodir=~/vimfiles/undo//
 
 ""Sets the unnamed register to the system clipboard
 set clipboard=unnamed
+
+" No bells
+set visualbell
+set noerrorbells
+set visualbell t_vb =
+
+"Searching
+set ignorecase " No case sensitivity when searching
+set smartcase  " Case sensitive only when there is a captial letter in search
+set incsearch  " Incrementally search while typing
+set wrapscan   " Wrap to beginning of file if end is reached while searching
