@@ -1,0 +1,33 @@
+set nocompatible
+syntax enable
+set backspace=indent,eol,start
+set number
+
+"Splitting
+set splitright
+set splitbelow hidden
+
+filetype indent plugin on " Attempt to detect filetype/contents so that vim can autoindent etc
+set autoindent            " When starting new line and no filetype-specific indenting is enabled, keep the same indent as the current line
+
+" Plugins
+"" Look for a readable instance of Vim-Plug
+if !empty(glob('~/vimfiles/autoload/plug.vim'))
+	"" Begin list of plugins
+	call plug#begin('~/vimfiles/plugged')
+		Plug 'junegunn/vim-easy-align' " Easy column-based alignment
+		Plug 'Townk/vim-autoclose'
+	call plug#end()
+
+endif
+
+" Change directories of temporary files
+"" Directory in which to create backups
+set backupdir=~/vimfiles/backup//
+"" Directory in which to create swap files
+set directory=~/vimfiles/swap//
+"" Directory in which to create undo files
+set undodir=~/vimfiles/undo//
+
+""Sets the unnamed register to the system clipboard
+set clipboard=unnamed
